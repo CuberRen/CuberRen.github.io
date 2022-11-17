@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>拙业网--翠翠一班</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Untitled</title>
+<script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[],'mblLoadCompatPattern':''"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/form/Button",
+  "dojo/store/Memory",
+  "dijit/tree/ObjectStoreModel",
+  "dijit/Tree",
+  "dojox/io/xhrScriptPlugin",
+  "dojo/data/ItemFileReadStore",
+  "gridx/Grid",
+  "gridx/core/model/cache/Async",
+  "dojox/data/CsvStore",
+  "dijit/form/TimeTextBox",
+  "dijit/form/CurrencyTextBox",
+  "dijit/form/ComboBox",
+  "dijit/Toolbar"
+]);
+</script>
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "lib/dojo/gridx/resources/claro/Gridx.css";@import "lib/dojo/gridx/resources/claro/Gridx_rtl.css";@import "app.css";
+</style>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body data-maq-flow-layout="true" data-maq-comptype="desktop" class="claro" data-maq-ws="collapse" data-maq-appstates="{}" id="myapp">
+ <div data-dojo-type="dojo/store/Memory" id="Memory_2" jsId="Memory_2" data="[{&quot;id&quot;:&quot;treeRoot&quot;,&quot;label&quot;:&quot;Root&quot;},{&quot;id&quot;:&quot;1&quot;,&quot;label&quot;:&quot;语文作业&quot;,&quot;parent&quot;:&quot;treeRoot&quot;},{&quot;id&quot;:&quot;1.1&quot;,&quot;label&quot;:&quot;1.写作业&quot;,&quot;parent&quot;:&quot;1&quot;,&quot;leaf&quot;:&quot;true&quot;},{&quot;id&quot;:&quot;1.2&quot;,&quot;label&quot;:&quot;2.写作业&quot;,&quot;parent&quot;:&quot;1&quot;,&quot;leaf&quot;:&quot;true&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;label&quot;:&quot;待定&quot;,&quot;parent&quot;:&quot;treeRoot&quot;},{&quot;id&quot;:&quot;2.1&quot;,&quot;label&quot;:&quot;看心情&quot;,&quot;parent&quot;:&quot;2&quot;,&quot;leaf&quot;:&quot;true&quot;}]">
+   <script type="dojo/method" data-dojo-event="getChildren" data-dojo-args="item">
+     return this.query({parent: this.getIdentity(item)});</script>
+ </div>
+ <div data-dojo-type="dijit/tree/ObjectStoreModel" id="ObjectStoreModel_2" jsId="ObjectStoreModel_2" query="{&quot;id&quot;:&quot;treeRoot&quot;}" labelAttr="label" store="Memory_2">
+   <script type="dojo/method" data-dojo-event="mayHaveChildren" data-dojo-args="item">
+     return !item.leaf;</script>
+ </div>
+ <div data-dojo-type="dijit/Tree" autoExpand="true" showRoot="false" childrenAttr="children" openOnClick="false" openOnDblClick="false" persist="false" dndParams="onDndDrop,itemCreator,onDndCancel,checkAcceptance,checkItemAcceptance,dragThreshold,betweenThreshold" dragThreshold="5" betweenThreshold="0" style="min-height: 1em; width: 144px; height: 462px;" model="ObjectStoreModel_2">
+<script type="dojo/method" data-dojo-event="getIconStyle" data-dojo-args="item, opened">var iconStyle = item.iconStyle;if (opened && item.iconStyleOpen) {	iconStyle = item.iconStyleOpen;};return iconStyle;</script>
+   <script type="dojo/connect" data-dojo-event="onClick" data-dojo-args="item, node, evt">var eventStr = item['onClick'];if (eventStr) { 	dojo.eval(eventStr);}</script>
+   <script type="dojo/connect" data-dojo-event="onDblClick" data-dojo-args="item, node, evt">var eventStr = item['onDblClick'];if (eventStr) { 	dojo.eval(eventStr);}</script>
+   <script type="dojo/connect" data-dojo-event="onClose" data-dojo-args="item, node">var eventStr = item['onClose'];if (eventStr) { 	dojo.eval(eventStr);}</script>
+   <script type="dojo/connect" data-dojo-event="onOpen" data-dojo-args="item, node">var eventStr = item['onOpen'];if (eventStr) { 	dojo.eval(eventStr);}</script>
+ </div>
+ <table style="border-collapse: collapse; table-layout: fixed; width: 100%; height: auto;">
+<colgroup>
+     <col></col>
+     <col></col>
+   </colgroup>
+   <tbody>
+     <tr>
+     </tr>
+     <tr>
+     </tr>
+   </tbody>
+ </table>
+ <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; position: absolute; background-color: #F9FFC2; z-index: 925; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 107px; left: 293px; top: 338px;" class="stickyNote">
+   <i>
+     作业写完了吗？？？<font color="#ff0000">
+       &nbsp;</font>
+   </i>
+ </div>
+ <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; background-color: #F9FFC2; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 90px; position: absolute; z-index: 900; left: 712px; top: 242px;" class="stickyNote">
+   <i>
+     作业写完了吗？？？</i>
+ </div>
+ <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; background-color: #F9FFC2; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 90px; position: absolute; z-index: 900; left: 468px; top: 70px;" class="stickyNote">
+   <i>
+ 作业写完了吗？？？</i>
+   <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; background-color: #F9FFC2; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 90px; position: absolute; z-index: 900; left: 272px; top: -55px;" class="stickyNote">
+     <i>
+                     作业写完了吗？？？</i>
+   </div>
+ </div>
+ <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; background-color: #F9FFC2; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 90px; position: absolute; z-index: 900; left: 224px; top: 215px;" class="stickyNote">
+   <i>
+     作业写完了吗？？？</i>
+ </div>
+ <div dvwidget="html.stickynote" style="border-width: 2px; border-style: solid; border-color: black; border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; background-color: #F9FFC2; -webkit-border-radius: 5px 5px 0 0; width: 205px; height: 90px; position: absolute; z-index: 900; left: 813px; top: 435px;" class="stickyNote">
+<i>
+     作业写完了吗？？？</i>
+ </div>
+ <input type="text" data-dojo-type="dijit/form/TimeTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$" rangeMessage="此值超出范围。" style="width: 226px;"></input>
+ <img></img>
+</body>
+</html>
